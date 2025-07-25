@@ -2,6 +2,8 @@
 #include <vector>
 #include <unordered_map>
 #include <queue>
+#include <sstream>
+#include <cstdlib>
 
 std::vector<int> Solution(const std::vector<int>& arr, const int k) {
     struct Compare{
@@ -27,17 +29,26 @@ std::vector<int> Solution(const std::vector<int>& arr, const int k) {
 }
 
 void Print(const std::vector<int>& vec) {
-    std::cout <<"---------\n";
+    std::cout << "---------\n";
     for (int i : vec) {
         std::cout << i << " ";
     }
-    std::cout <<"\n---------\n";
+    std::cout << "\n---------\n";
 }
 
-int main() {
-    std::vector<int> s1 {1, 1, 1, 2, 3, 4, 4};
-    int k1 = 2;
+int main(int argc, char* argv[]) {
+    if (argc < 3) {
+        std::cerr << "Использование: " << argv[0] << " <k> <элемент1> <элемент2> ...\n";
+        return 1;
+    }
 
-    Print(Solution(s1, k1));
+    int k = std::atoi(argv[1]);
+    std::vector<int> arr;
+    
+    for (int i = 2; i < argc; ++i) {
+        arr.push_back(std::atoi(argv[i]));
+    }
+
+    Print(Solution(arr, k));
     return 0;
 }
