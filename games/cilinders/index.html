@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра: Восстанови порядок цилиндров</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .cylinder {
+      width: 50px;
+      height: 100px;
+      background-color: gray;
+      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      color: white;
+      transition: 0.2s all ease;
+    }
+    .cylinder:hover {
+      transform: scale(1.1);
+    }
+    .button-container {
+      margin-top: 10px;
+    }
+    .button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s background-color ease;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Игра: Восстанови порядок цилиндров</h1>
+  <div class="container" id="cylinder-container"></div>
+  <div class="button-container">
+    <button class="button" onclick="swapCylinders()">Поменять местами</button>
+    <button class="button" onclick="showAnswer()">Показать ответ</button>
+  </div>
+  <div class="message" id="message">Совпадений: 0, Ходы: 0</div>
+  <script src="script.js"></script>
+</body>
+</html>
